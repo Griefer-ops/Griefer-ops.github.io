@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Amine NASSIRI — Ingénieur DevOps & Full-Stack</title>
-<meta name="description" content="Amine NASSIRI, ingénieur d'État en informatique et réseaux (EMSI 2026). DevOps, Cloud et développement full-stack : Docker, Kubernetes, FastAPI, React.">
+<title>Amine NASSIRI — Développeur augmenté par l'IA</title>
+<meta name="description" content="Amine NASSIRI, ingénieur d'État en informatique et réseaux (EMSI 2026). Développeur logiciel qui travaille avec des agents IA (Claude Code) : Python, FastAPI, React, automatisation.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%230b0b12'/><text x='50%' y='54%' text-anchor='middle' dominant-baseline='middle' font-family='monospace' font-weight='700' font-size='28' fill='%23a78bfa'>AN</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -207,6 +207,24 @@ footer{border-top:1px solid var(--line);text-align:center;padding:26px 24px;colo
   .nav{padding:14px 16px}
   .certs{grid-template-columns:1fr}
 }
+
+/* method */
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:40px;counter-reset:s}
+.step{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;position:relative}
+.step b{font-family:var(--mono);color:var(--violet);font-size:13px;display:block;margin-bottom:10px}
+.step h3{font-family:var(--display);font-size:18px;line-height:1.25;margin-bottom:8px}
+.step p{color:var(--muted);font-size:14px}
+.step.ai{border-color:rgba(34,211,238,.35)}
+.step.ai b{color:var(--cyan)}
+/* gallery */
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:6px 0 18px}
+.gallery img{border-radius:10px;border:1px solid var(--line);aspect-ratio:16/9;object-fit:cover;width:100%;user-select:none;-webkit-user-drag:none;pointer-events:none}
+.lock{display:inline-flex;gap:8px;align-items:center;font-family:var(--mono);font-size:12.5px;color:#fbbf24;background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.25);padding:6px 10px;border-radius:8px}
+.flow{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-family:var(--mono);font-size:12.5px;margin:4px 0 18px}
+.flow span{padding:5px 10px;border-radius:8px;background:rgba(167,139,250,.1);border:1px solid rgba(167,139,250,.25)}
+.flow i{color:var(--dim);font-style:normal}
+@media (max-width:1000px){.steps{grid-template-columns:1fr 1fr}}
+@media (max-width:720px){.steps{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr}}
 </style>
 </head>
 <body>
@@ -217,9 +235,10 @@ footer{border-top:1px solid var(--line);text-align:center;padding:26px 24px;colo
     <a href="#top" class="logo"><span>~/</span><b>amine</b><span>.nassiri</span></a>
     <ul id="menu">
       <li><a href="#about">À propos</a></li>
+      <li><a href="#methode">Ma méthode</a></li>
+      <li><a href="#projects">Projets</a></li>
       <li><a href="#skills">Compétences</a></li>
       <li><a href="#experience">Parcours</a></li>
-      <li><a href="#projects">Projets</a></li>
       <li><a href="#certifications">Certifications</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -233,11 +252,11 @@ footer{border-top:1px solid var(--line);text-align:center;padding:26px 24px;colo
 <!-- HERO -->
 <section class="hero">
   <div>
-    <div class="status"><span class="dot"></span>Disponible — ouvert aux opportunités en France (CDI / CDD)</div>
+    <div class="status"><span class="dot"></span>Disponible — premier poste en France (CDI / CDD)</div>
     <div class="hello">Bonjour, je suis</div>
     <h1>Amine<br><span class="last">NASSIRI</span></h1>
-    <div class="role">Ingénieur <span class="rot" id="rot">DevOps</span></div>
-    <p class="intro">Ingénieur d'État en Informatique et Réseaux (EMSI, promotion 2026). Je conçois des applications web full-stack et je les déploie de façon fiable, avec des conteneurs, Kubernetes et des pipelines CI/CD.</p>
+    <div class="role">Développeur <span class="rot" id="rot">augmenté par l'IA</span></div>
+    <p class="intro">Ingénieur d'État en Informatique et Réseaux (EMSI, promotion 2026). Je développe en binôme avec des agents IA comme Claude Code : je cadre le besoin, je fais coder l'agent, puis je relis, teste et intègre son travail. Le résultat : des logiciels qui marchent, livrés vite, et dont je garde la maîtrise.</p>
     <div class="cta">
       <a class="btn btn-primary" href="#projects">Voir mes projets
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6l6 6-6 6"/></svg></a>
@@ -263,34 +282,142 @@ footer{border-top:1px solid var(--line);text-align:center;padding:26px 24px;colo
   <div class="eyebrow">01 — À propos</div>
   <div class="about-grid">
     <div class="about-text reveal">
-      <h2>Du code au <span>déploiement</span>.</h2>
-      <p>Je suis <strong>ingénieur d'État en Informatique et Réseaux</strong>, diplômé de l'EMSI Rabat (filière MIAGE, promotion 2026). Mon profil est à la croisée du <strong>développement full-stack</strong> et du <strong>DevOps</strong> : je conçois des API et des interfaces, puis je les conteneurise et automatise leur mise en production.</p>
-      <p>Pendant mon projet de fin d'études à l'<strong>ONCF</strong>, j'ai développé une plateforme de gestion du transport ferroviaire (FastAPI, React, PostgreSQL, Docker). Chez <strong>OmniData</strong>, j'ai mis en place des déploiements <strong>GitOps</strong> avec Kubernetes et Flux CD.</p>
-      <p>Curieux et autodidacte, j'ai validé <strong>20 certifications Coursera</strong> (IBM, Google, Meta, Johns Hopkins…). Je cherche aujourd'hui un premier poste en France, en DevOps, Cloud ou développement.</p>
+      <h2>L'IA code, <span>je garde la main</span>.</h2>
+      <p>Je suis <strong>ingénieur d'État en Informatique et Réseaux</strong>, diplômé de l'EMSI Rabat (filière MIAGE, promotion 2026). Je travaille comme un <strong>chef d'orchestre</strong> : je comprends le besoin, je découpe le travail et je décide de l'architecture, puis je confie une partie du code à des <strong>agents IA</strong>. Je vérifie tout ce qu'ils produisent avant de l'intégrer.</p>
+      <p>Avec cette méthode, j'ai construit un <strong>studio d'automatisation de vidéos</strong> en Python et <strong>Hollowgate</strong>, un jeu 3D sous Godot 4. Mes bases viennent de l'entreprise : une plateforme full-stack à l'<strong>ONCF</strong> (FastAPI, React, PostgreSQL, Docker) et des déploiements automatisés chez <strong>OmniData</strong>.</p>
+      <p>Curieux et autodidacte, j'ai validé <strong>20 certifications Coursera</strong> (IBM, Google, Meta, Johns Hopkins…). Je cherche aujourd'hui un premier poste en France comme <strong>développeur assisté par IA</strong>, full-stack ou Python.</p>
     </div>
     <div class="stats reveal">
       <div class="stat"><b>3</b><span>stages en entreprise</span></div>
       <div class="stat"><b>20</b><span>certifications Coursera</span></div>
-      <div class="stat"><b>5+</b><span>projets livrés</span></div>
+      <div class="stat"><b>2</b><span>projets construits avec des agents IA</span></div>
       <div class="stat"><b>3</b><span>langues : arabe, français, anglais</span></div>
     </div>
   </div>
 </section>
 
+
+<!-- METHOD -->
+<section id="methode">
+  <div class="eyebrow">02 — Ma méthode</div>
+  <h2 class="reveal">Développer <span>avec</span> l'IA, pas à sa place.</h2>
+  <p class="lead reveal">L'IA écrit une grande partie du code. Moi, je décide quoi construire, je contrôle la qualité et je reste responsable du résultat.</p>
+  <div class="steps">
+    <div class="step reveal"><b>01</b><h3>Comprendre le besoin</h3><p>Ce que l'utilisateur veut vraiment, les contraintes, ce qui compte.</p></div>
+    <div class="step reveal"><b>02</b><h3>Découper et concevoir</h3><p>Architecture, étapes, interfaces : un plan clair avant la première ligne.</p></div>
+    <div class="step ai reveal"><b>03 · agent IA</b><h3>Déléguer le code</h3><p>Des tâches précises confiées à un agent (Claude Code), une à la fois.</p></div>
+    <div class="step reveal"><b>04</b><h3>Vérifier</h3><p>Relire, tester, repérer les erreurs, refuser ou corriger ce qui ne va pas.</p></div>
+    <div class="step reveal"><b>05</b><h3>Intégrer proprement</h3><p>Un code maintenable, testé et documenté dans le vrai produit.</p></div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="eyebrow">03 — Projets</div>
+  <h2 class="reveal">Ce que j'ai <span>construit</span>.</h2>
+  <p class="lead reveal">Mes projets construits avec des agents IA, puis ceux réalisés en entreprise et pendant ma formation.</p>
+  <div class="projects">
+    <article class="project featured reveal">
+      <div class="p-top"><span class="p-num">01 / Projet phare</span><span>2026</span></div>
+      <h3>Studio d'automatisation de Reels « Sketchy Teller »</h3>
+      <div class="ctx">Projet personnel · construit avec un agent IA</div>
+      <p>Une chaîne Python qui transforme un script en vidéo verticale prête à publier, sans montage à la main. J'ai conçu l'architecture et piloté l'agent IA étape par étape, en testant chaque brique.</p>
+      <div class="flow"><span>Script</span><i>→</i><span>Images générées</span><i>→</i><span>Voix IA</span><i>→</i><span>Montage auto</span><i>→</i><span>Reel prêt</span></div>
+      <ul>
+        <li>Génération des images de chaque scène à partir du script.</li>
+        <li>Voix off par IA, avec plusieurs moteurs au choix (ElevenLabs, Kokoro, Chatterbox).</li>
+        <li>Montage automatique : musique, effets sonores, titres, export au format vertical.</li>
+      </ul>
+      <div class="p-foot">
+        <div class="tags"><span class="tag">Python</span><span class="tag">APIs d'IA</span><span class="tag">Text-to-speech</span><span class="tag">Automatisation</span><span class="tag">Claude Code</span></div>
+        <span class="p-link">Démo sur demande</span>
+      </div>
+    </article>
+    <article class="project featured reveal">
+      <div class="p-top"><span class="p-num">02 / Jeu vidéo</span><span>2026</span></div>
+      <h3>Hollowgate</h3>
+      <div class="ctx">Projet personnel · Godot 4 · développé avec des agents IA</div>
+      <p>Un jeu 3D à la première personne de dark fantasy, jouable en coopération : un village vivant, un casino, et un donjon plein de trésors et de monstres. Je l'ai conçu et je pilote son développement avec des agents IA, de la conception aux tests.</p>
+      <div class="gallery" oncontextmenu="return false">
+        <img src="assets/hollowgate/village.jpg" alt="Hollowgate : le village" loading="lazy" draggable="false">
+        <img src="assets/hollowgate/casino.jpg" alt="Hollowgate : le casino" loading="lazy" draggable="false">
+        <img src="assets/hollowgate/roulette.jpg" alt="Hollowgate : la roulette" loading="lazy" draggable="false">
+        <img src="assets/hollowgate/donjon.jpg" alt="Hollowgate : le donjon" loading="lazy" draggable="false">
+      </div>
+      <ul>
+        <li>Combat en temps réel, inventaire, quêtes, personnalisation du personnage, coop en ligne.</li>
+        <li>Document de conception, scripts GDScript, tests automatisés et builds Windows.</li>
+      </ul>
+      <div class="p-foot">
+        <div class="tags"><span class="tag">Godot 4</span><span class="tag">GDScript</span><span class="tag">Game design</span><span class="tag">Agents IA</span><span class="tag">Tests</span></div>
+        <span class="lock">🔒 Code privé · © Amine NASSIRI · démo sur demande</span>
+      </div>
+    </article>
+    <article class="project reveal">
+      <div class="p-top"><span class="p-num">03</span><span>2026</span></div>
+      <h3>Plateforme de gestion du transport ferroviaire</h3>
+      <div class="ctx">Projet de fin d'études · ONCF</div>
+      <p>Application web complète, de la base de données au déploiement en conteneurs.</p>
+      <ul>
+        <li>API REST et modèle de données (FastAPI, PostgreSQL).</li>
+        <li>Authentification, tableaux de bord et reporting (React).</li>
+        <li>Conteneurisation avec Docker.</li>
+      </ul>
+      <div class="p-foot">
+        <div class="tags"><span class="tag">FastAPI</span><span class="tag">React</span><span class="tag">PostgreSQL</span><span class="tag">Docker</span></div>
+        <span class="p-link">Code interne à l'ONCF</span>
+      </div>
+    </article>
+    <article class="project reveal">
+      <div class="p-top"><span class="p-num">04</span><span>2025</span></div>
+      <h3>Déploiement automatisé sur Kubernetes</h3>
+      <div class="ctx">Stage · OmniData</div>
+      <p>Chaque changement poussé sur Git est déployé automatiquement sur le cluster (GitOps avec Flux CD).</p>
+      <div class="p-foot">
+        <div class="tags"><span class="tag">Kubernetes</span><span class="tag">Flux CD</span><span class="tag">Docker</span><span class="tag">CI/CD</span></div>
+        <a class="p-link on" href="https://github.com/Griefer-ops/gitops-platforme" target="_blank" rel="noopener">Voir le code ↗</a>
+      </div>
+    </article>
+    <article class="project reveal">
+      <div class="p-top"><span class="p-num">05</span><span>2026</span></div>
+      <h3>Ce portfolio</h3>
+      <div class="ctx">Conçu avec un agent IA</div>
+      <p>Conçu en binôme avec un agent IA : j'ai donné la direction, relu le code, corrigé l'affichage sur mobile, puis déployé sur GitHub Pages.</p>
+      <div class="p-foot">
+        <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">GitHub Pages</span></div>
+      </div>
+    </article>
+    <article class="project reveal">
+      <div class="p-top"><span class="p-num">06</span><span>Académique</span></div>
+      <h3>Gestion des présences & SI de gestion</h3>
+      <div class="ctx">Projets EMSI</div>
+      <p>Une application Android de suivi des présences (authentification, rôles) et une application web full-stack (CRUD, MySQL).</p>
+      <div class="p-foot">
+        <div class="tags"><span class="tag">Android</span><span class="tag">MySQL</span><span class="tag">Full-stack</span></div>
+      </div>
+    </article>
+  </div>
+</section>
+
 <!-- SKILLS -->
 <section id="skills">
-  <div class="eyebrow">02 — Compétences</div>
+  <div class="eyebrow">04 — Compétences</div>
   <h2 class="reveal">Ma <span>stack</span> technique.</h2>
   <div class="skills">
     <div class="skill-card reveal">
-      <h3><span class="ic">⎈</span>Cloud & DevOps</h3>
-      <p>Conteneurisation, orchestration, GitOps et automatisation.</p>
-      <div class="tags"><span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">Flux CD</span><span class="tag">Helm</span><span class="tag">Kustomize</span><span class="tag">CI/CD</span><span class="tag">Git</span><span class="tag">Azure</span><span class="tag">OpenShift</span><span class="tag">Unix / Shell</span></div>
+      <h3><span class="ic">✦</span>Développement assisté par IA</h3>
+      <p>Piloter des agents de code et garder la qualité.</p>
+      <div class="tags"><span class="tag">Claude Code</span><span class="tag">Agents IA</span><span class="tag">Revue de code généré</span><span class="tag">Tests</span><span class="tag">APIs d'IA</span><span class="tag">Prompts précis</span></div>
     </div>
     <div class="skill-card reveal">
-      <h3><span class="ic">{ }</span>Back-end</h3>
+      <h3><span class="ic">⎈</span>Industrialisation</h3>
+      <p>Conteneurs, déploiement et automatisation.</p>
+      <div class="tags"><span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">Flux CD</span><span class="tag">CI/CD</span><span class="tag">Git</span><span class="tag">Unix / Shell</span></div>
+    </div>
+    <div class="skill-card reveal">
+      <h3><span class="ic">{ }</span>Python & back-end</h3>
       <p>API REST, architecture et logique métier.</p>
-      <div class="tags"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Java</span><span class="tag">Spring Cloud</span><span class="tag">PHP</span><span class="tag">C / C++</span></div>
+      <div class="tags"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">API REST</span><span class="tag">Java</span><span class="tag">GDScript</span><span class="tag">C / C++</span><span class="tag">PHP</span></div>
     </div>
     <div class="skill-card reveal">
       <h3><span class="ic">&lt;/&gt;</span>Front-end & mobile</h3>
@@ -307,17 +434,12 @@ footer{border-top:1px solid var(--line);text-align:center;padding:26px 24px;colo
       <p>Conception et travail en équipe.</p>
       <div class="tags"><span class="tag">Agile</span><span class="tag">UML</span><span class="tag">POO</span><span class="tag">API REST</span><span class="tag">Génie logiciel</span></div>
     </div>
-    <div class="skill-card reveal">
-      <h3><span class="ic">⛨</span>Sécurité & réseaux</h3>
-      <p>Bases de la cybersécurité et réseaux cloud.</p>
-      <div class="tags"><span class="tag">Cybersécurité</span><span class="tag">Réseaux virtuels Azure</span><span class="tag">Authentification</span><span class="tag">Gestion des rôles</span></div>
-    </div>
   </div>
 </section>
 
 <!-- EXPERIENCE -->
 <section id="experience">
-  <div class="eyebrow">03 — Parcours</div>
+  <div class="eyebrow">05 — Parcours</div>
   <h2 class="reveal">Expérience <span>professionnelle</span>.</h2>
   <div class="timeline">
     <div class="tl-item reveal">
@@ -347,75 +469,9 @@ footer{border-top:1px solid var(--line);text-align:center;padding:26px 24px;colo
   </div>
 </section>
 
-<!-- PROJECTS -->
-<section id="projects">
-  <div class="eyebrow">04 — Projets</div>
-  <h2 class="reveal">Ce que j'ai <span>construit</span>.</h2>
-  <p class="lead reveal">Une sélection de projets réalisés en entreprise et pendant ma formation.</p>
-  <div class="projects">
-    <article class="project featured reveal">
-      <div class="p-top"><span class="p-num">01 / Projet phare</span><span>2026</span></div>
-      <h3>Plateforme de gestion du transport ferroviaire</h3>
-      <div class="ctx">Projet de fin d'études · ONCF</div>
-      <p>Application web complète pour gérer les opérations de transport ferroviaire, de la base de données jusqu'au déploiement en conteneurs.</p>
-      <ul>
-        <li>API REST et modèle de données conçus avec FastAPI et PostgreSQL.</li>
-        <li>Authentification, tableaux de bord et reporting en React.</li>
-        <li>Plateforme entièrement conteneurisée avec Docker.</li>
-      </ul>
-      <div class="p-foot">
-        <div class="tags"><span class="tag">FastAPI</span><span class="tag">React</span><span class="tag">PostgreSQL</span><span class="tag">Docker</span></div>
-        <span class="p-link">Code interne à l'ONCF</span>
-      </div>
-    </article>
-    <article class="project reveal">
-      <div class="p-top"><span class="p-num">02</span><span>2025</span></div>
-      <h3>Plateforme GitOps sur Kubernetes</h3>
-      <div class="ctx">Stage DevOps · OmniData</div>
-      <p>Cluster K3s entièrement piloté depuis Git : chaque commit est synchronisé automatiquement par Flux CD.</p>
-      <ul>
-        <li>Infrastructure en HelmReleases : MetalLB (load balancer) et cert-manager (TLS).</li>
-        <li>Mise à jour automatique des images (Flux image automation).</li>
-        <li>Apps déployées avec Kustomize, Ingress et dépendances entre couches.</li>
-      </ul>
-      <div class="p-foot">
-        <div class="tags"><span class="tag">Kubernetes / K3s</span><span class="tag">Flux CD</span><span class="tag">Helm</span><span class="tag">Kustomize</span><span class="tag">cert-manager</span><span class="tag">MetalLB</span></div>
-        <a class="p-link on" href="https://github.com/Griefer-ops/gitops-platforme" target="_blank" rel="noopener">Voir le code ↗</a>
-      </div>
-    </article>
-    <article class="project reveal">
-      <div class="p-top"><span class="p-num">03</span><span>2023</span></div>
-      <h3>Gestion des objets perdus et trouvés</h3>
-      <div class="ctx">Stage · ONCF</div>
-      <p>Application web pour enregistrer, rechercher et restituer les objets perdus.</p>
-      <div class="p-foot">
-        <div class="tags"><span class="tag">PHP</span><span class="tag">MySQL</span></div>
-      </div>
-    </article>
-    <article class="project reveal">
-      <div class="p-top"><span class="p-num">04</span><span>Académique</span></div>
-      <h3>Système de gestion des présences</h3>
-      <div class="ctx">Projet EMSI</div>
-      <p>Application Android de suivi des présences des étudiants, avec authentification et gestion des rôles.</p>
-      <div class="p-foot">
-        <div class="tags"><span class="tag">Android</span><span class="tag">Authentification</span><span class="tag">Rôles</span></div>
-      </div>
-    </article>
-    <article class="project reveal">
-      <div class="p-top"><span class="p-num">05</span><span>Académique</span></div>
-      <h3>Système d'information de gestion</h3>
-      <div class="ctx">Projet EMSI</div>
-      <p>Application web full-stack (CRUD) avec authentification et base de données MySQL.</p>
-      <div class="p-foot">
-        <div class="tags"><span class="tag">Full-stack</span><span class="tag">MySQL</span><span class="tag">CRUD</span></div>
-      </div>
-    </article>
-  </div>
-</section>
-
 <!-- CERTIFICATIONS -->
 <section id="certifications">
-  <div class="eyebrow">05 — Certifications</div>
+  <div class="eyebrow">06 — Certifications</div>
   <h2 class="reveal"><span>20</span> certifications.</h2>
   <p class="lead reveal">Obtenues sur Coursera auprès d'IBM, Google, Meta et d'universités comme Johns Hopkins, Michigan, EPFL ou Penn.</p>
   <div class="filters" role="tablist">
@@ -433,7 +489,7 @@ footer{border-top:1px solid var(--line);text-align:center;padding:26px 24px;colo
 
 <!-- EDUCATION -->
 <section id="education">
-  <div class="eyebrow">06 — Formation</div>
+  <div class="eyebrow">07 — Formation</div>
   <h2 class="reveal">Formation & <span>langues</span>.</h2>
   <div class="edu">
     <div class="edu-card reveal">
@@ -457,9 +513,9 @@ footer{border-top:1px solid var(--line);text-align:center;padding:26px 24px;colo
 
 <!-- CONTACT -->
 <section id="contact" class="contact">
-  <div class="eyebrow" style="justify-content:center">07 — Contact</div>
+  <div class="eyebrow" style="justify-content:center">08 — Contact</div>
   <h2 class="reveal">Travaillons <span>ensemble</span>.</h2>
-  <p class="lead reveal">Je suis disponible pour un poste en France en DevOps, Cloud ou développement full-stack / back-end. Un échange vous intéresse ? Écrivez-moi.</p>
+  <p class="lead reveal">Je cherche un premier poste en France comme développeur assisté par IA, full-stack ou Python. Une démo de mes projets vous intéresse ? Écrivez-moi.</p>
   <a class="mail-big reveal" href="mailto:nassiri2004amine@gmail.com">nassiri2004amine@gmail.com</a>
   <div class="cta reveal">
     <a class="btn btn-primary" href="mailto:nassiri2004amine@gmail.com">M'envoyer un email</a>
@@ -475,7 +531,7 @@ footer{border-top:1px solid var(--line);text-align:center;padding:26px 24px;colo
 
 <script>
 // Rotating role
-const roles=["DevOps","Cloud","Full-Stack","Back-End"];
+const roles=["augmenté par l'IA","Python","Full-Stack","qui garde la main"];
 const rot=document.getElementById("rot");
 const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
 if(!reduce){let i=0,ch=roles[0].length,del=true;
@@ -486,14 +542,13 @@ if(!reduce){let i=0,ch=roles[0].length,del=true;
 
 // Terminal typing
 const lines=[
-  ['<span class="c-p">amine@portfolio</span>:<span class="c-c">~</span>$ kubectl get skills',30],
-  ['<span class="c-d">NAME          STATUS   AGE</span>',0],
-  ['docker        <span class="c-g">Running</span>  3y',0],
-  ['kubernetes    <span class="c-g">Running</span>  2y',0],
-  ['fastapi       <span class="c-g">Running</span>  2y',0],
-  ['react         <span class="c-g">Running</span>  3y',0],
-  ['<span class="c-p">amine@portfolio</span>:<span class="c-c">~</span>$ echo $STATUS',30],
-  ['<span class="c-g">open_to_work</span> → France · CDI / CDD',0]
+  ['<span class="c-p">amine</span>:<span class="c-c">~/projet</span>$ claude "ajoute l\'export vidéo vertical"',30],
+  ['<span class="c-d">● Plan : 3 fichiers à modifier…</span>',0],
+  ['<span class="c-d">● Écriture de export.py</span>',0],
+  ['<span class="c-p">amine</span>:<span class="c-c">~/projet</span>$ pytest',30],
+  ['<span class="c-g">12 passed</span> · 1 failed → je corrige',0],
+  ['<span class="c-p">amine</span>:<span class="c-c">~/projet</span>$ git diff  <span class="c-d"># je relis tout</span>',30],
+  ['<span class="c-g">✓ revu, testé, intégré</span>',0]
 ];
 const term=document.getElementById("term");
 if(reduce){term.innerHTML=lines.map(l=>l[0]).join("\n")}
